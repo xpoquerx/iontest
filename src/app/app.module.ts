@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-// Firebase setup.
+// Dependências do Firebase.
 import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -27,9 +27,13 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore'
       registrationStrategy: 'registerWhenStable:30000'
     }),
 
-    // Firebase setup.
+    // Inicializa app do Firebase.
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+
+    // Inicializa Firebase Authentication.
     provideAuth(() => getAuth()),
+
+    // Inicializa Firebase Cloud Firestore.
     provideFirestore(() => getFirestore())
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
