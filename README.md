@@ -17,7 +17,7 @@ Resumidamente, nesses passos, você vai fazer "fork" do repositório original, "
  - Ainda no navegador, acesse o repositório deste aplicativo [Ionic Test](https://github.com/Luferat/iontest).
  - No canto superior direito da página, localize e clique no ícone "Fork".
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/Luferat/MyGistImages/main/github/20230927.fork.png" alt="Fork"></p>
+<p align="center" width="100%"><img src="https://raw.githubusercontent.com/Luferat/MyGistImages/main/github/20230927.fork.png" alt="Fork"></p>
 
  - Se necessário, altere "**Repository name**" para evitar conflitos com seus repositórios atuais.
  - Clique no botão [Create Fork] para fazer a cópia do repositório para seu próprio GitHub.com.
