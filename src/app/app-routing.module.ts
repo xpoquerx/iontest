@@ -3,13 +3,18 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 const routes: Routes = [
+
+  // Rota padrão. Deve ser sempre a primeira rota desta lista.
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
+  // Rota modelo do Ionic. Pode ser apagada posteriormente.
   {
     path: 'folder/:id',
+    title: environment.appName + ' - Página de teste',
     loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
   },
   {
@@ -43,7 +48,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/author/author.module').then(m => m.AuthorPageModule)
   },
 
-  // A rota curinga deve ser sempre a última rota.
+  // Rota curinga. Deve ser sempre a última rota desta lista.
   {
     path: '**',
     redirectTo: 'e404',

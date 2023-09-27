@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
+
+  // Configurações do aplicativo.
   appName: "Ionic Test",
   appSlogan: "O melhor app do mundo!",
 
