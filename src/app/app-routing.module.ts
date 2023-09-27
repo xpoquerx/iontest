@@ -13,27 +13,27 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./page/home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'contacts',
-    loadChildren: () => import('./page/contacts/contacts.module').then(m => m.ContactsPageModule)
+    loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsPageModule)
   },
   {
     path: 'about',
-    loadChildren: () => import('./page/about/about.module').then(m => m.AboutPageModule)
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule)
   },
   {
     path: 'policies',
-    loadChildren: () => import('./page/policies/policies.module').then(m => m.PoliciesPageModule)
+    loadChildren: () => import('./pages/policies/policies.module').then(m => m.PoliciesPageModule)
   },
   {
     path: 'e404',
-    loadChildren: () => import('./page/e404/e404.module').then(m => m.E404PageModule)
+    loadChildren: () => import('./pages/e404/e404.module').then(m => m.E404PageModule)
   },
   {
     path: 'author',
-    loadChildren: () => import('./page/author/author.module').then(m => m.AuthorPageModule)
+    loadChildren: () => import('./pages/author/author.module').then(m => m.AuthorPageModule)
   },
 
   // A rota curinga deve ser sempre a última rota.
