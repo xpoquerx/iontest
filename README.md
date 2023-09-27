@@ -17,7 +17,7 @@ Resumidamente, nesses passos, você vai fazer "fork" do repositório original, "
  - Ainda no navegador, acesse o repositório deste aplicativo [Ionic Test](https://github.com/Luferat/iontest).
  - No canto superior direito da página, localize e clique no ícone "Fork".
 
-<p align="center" width="100%"><img src="https://raw.githubusercontent.com/Luferat/MyGistImages/main/github/20230927.fork.png" alt="Fork"></p>
+<p style="text-align: center"><img src="https://raw.githubusercontent.com/Luferat/MyGistImages/main/github/20230927.fork.png" alt="Fork"></p>
 
  - Se necessário, altere "**Repository name**" para evitar conflitos com seus repositórios atuais.
  - Clique no botão [Create Fork] para fazer a cópia do repositório para seu próprio GitHub.com.
@@ -30,6 +30,16 @@ Resumidamente, nesses passos, você vai fazer "fork" do repositório original, "
  - Abra um "**Node.js command prompt**" e navegue até a pasta raiz do projeto clonado.
 
 > Lembre-se que a pasta raiz de um projeto **Node** é onde está o arquivo "**package.json**"!!!
+
+### Redes com SSL Self-signed
+Se você está em uma rede com SSL auto assinado ou abaixo de um proxy, pode ser necessário executar os comandos abaixo antes de baixar os pacotes via `npm`:
+
+```
+npm config set strict-ssl false
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+```
+
+### Baixando dependências
 
  - Comande `npm install` para obter todas as dependências.
  - Abra o projeto no **VSCode** ou em outra IDE.
