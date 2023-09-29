@@ -5,6 +5,9 @@ export const environment = {
   appName: "Ionic Test",
   appSlogan: "Lorem, ipsum dolor!",
 
+  // Tipo de login. ['redirect' ou 'popup'].
+  signInMethod: "redirect",
+
   // Altere estas chaves conforme seu próprio projeto no Firebase.com.
   firebase: {
     apiKey: "AIzaSyB3qGcFb11tOQGm2_vOnUxd7rQaBhcMkPQ",

@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,6 +13,7 @@ export class AppComponent {
   // Variáveis de ambiente.
   env = environment;
 
+  // Menu principal.
   public appPages = [
     { title: 'Início', url: 'home', icon: 'home' },
     { title: 'Contatos', url: 'contacts', icon: 'mail' },

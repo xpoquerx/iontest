@@ -8,12 +8,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-// Dependências do Firebase.
-import { environment } from 'src/environments/environment';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,16 +19,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    }),
-
-    // Inicializa app do Firebase.
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-
-    // Inicializa Firebase Authentication.
-    provideAuth(() => getAuth()),
-
-    // Inicializa Firebase Cloud Firestore.
-    provideFirestore(() => getFirestore())
+    })
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

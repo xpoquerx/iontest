@@ -47,6 +47,16 @@ const routes: Routes = [
     title: environment.appName + ' - Sobre os autores',
     loadChildren: () => import('./pages/author/author.module').then(m => m.AuthorPageModule)
   },
+  {
+    path: 'login',
+    title: environment.appName + ' - Login / Entrar',
+    loadChildren: () => import('./user/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'profile',
+    title: environment.appName + ' - Perfil do usuário',
+    loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule)
+  },
 
   // Rota curinga. Deve ser sempre a última rota desta lista.
   {
