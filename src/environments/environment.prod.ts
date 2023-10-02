@@ -3,7 +3,10 @@ export const environment = {
 
   // Configurações do aplicativo.
   appName: "Ionic Test",
-  appSlogan: "O melhor app do mundo!",
+  appSlogan: "Lorem, ipsum dolor!",
+
+  // Tipo de login. ['redirect' ou 'popup'].
+  signInMethod: "redirect",
 
   // Altere estas chaves conforme seu próprio projeto no Firebase.com.
   firebase: {
