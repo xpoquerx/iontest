@@ -28,9 +28,9 @@ Resumidamente, nesses passos, você vai fazer "fork" do repositório original, "
  - Clique no botão [Clone] e aguarde o processo concluir.
 
 ## Configurando
- - Abra um "**Node.js command prompt**" e navegue até a pasta raiz do projeto clonado.
+Abra um "**Node.js command prompt**" e navegue até a pasta raiz do projeto clonado.
 
-> Lembre-se que a pasta raiz de um projeto **Node** é onde está o arquivo "**package.json**"!!!
+> Lembre-se que a pasta raiz de um projeto **Node** é onde está o arquivo "**package.json**" dele!!!
 
 ### Redes com SSL Self-signed
 Se você está em uma rede com SSL auto assinado ou abaixo de um proxy, pode ser necessário executar os comandos abaixo antes de baixar os pacotes via `npm`:
