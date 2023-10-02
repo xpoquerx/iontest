@@ -1,7 +1,7 @@
 # Ionic Test
 Aplicativo modelo para as aulas de "Desenvolvimento de Aplicativos Híbridos" usando [Angular](https://angular.io/), [Ionic](https://ionicframework.com/), [Capacitor](https://capacitorjs.com/) e [Firebase](https://firebase.com).
 
-> Nestes passos, estamos usando o [GitHub Desktop](https://desktop.github.com) para fazer versionamento no Windows 10/11. O aplicativo já deve estar instalado no computador.
+> Nestes passos, estamos usando o [GitHub Desktop](https://desktop.github.com) para fazer versionamento no Windows 10/11. O GitHub Desktop já deve estar instalado no computador.
 
 Resumidamente, nesses passos, você vai fazer "fork" do repositório original, "clonar" na estação de trabalho, baixar as dependências e configurar a conexão com o Firebase.
 
@@ -9,6 +9,7 @@ Resumidamente, nesses passos, você vai fazer "fork" do repositório original, "
  - Abra o navegador padrão e acesse o site [Firebase](https://firebase.com).
  - Logue-se com sua conta Gmail.
  - Se ainda não o fez, crie um novo projeto e, neste, um novo aplicativo Web.
+ - Ative também os serviços *Authentication* e *Cloud Firestore*.
 
 > Os passos para criar um projetos e o aplicativo no Firebase não serão descritos aqui. Pesquise!
 
