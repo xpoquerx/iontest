@@ -12,7 +12,7 @@
   <!-- pre>{{ user | json }}</pre -->
 
   <ion-card>
-    <img alt="{{ user.displayName }}" src="{{ user.photoURL }}" referrerpolicy="no-referrer" style="display: block; margin: auto;" />
+    <img [alt]="user.displayName" [src]="user.photoURL" referrerpolicy="no-referrer" style="display: block; margin: auto;" />
     <ion-card-header>
       <ion-card-title>{{ user.displayName }}</ion-card-title>
       <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
