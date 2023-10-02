@@ -21,13 +21,11 @@
       <ul style="margin: 0; padding: 0 0 0 1rem;">
         <li>
           <strong>Cadastro: </strong>
-          {{ user.metadata.creationTime | date: 'dd/MM/yyyy' }}
-          às {{ user.metadata.creationTime | date: 'HH:mm' }}
+          {{ user.metadata.creationTime | date: 'dd/MM/yyyy' }} às {{ user.metadata.creationTime | date: 'HH:mm' }}
         </li>
         <li>
           <strong>Último login: </strong>
-          {{ user.metadata.lastSignInTime | date: 'dd/MM/yyyy' }}
-          às {{ user.metadata.lastSignInTime | date: 'HH:mm' }}
+          {{ user.metadata.lastSignInTime | date: 'dd/MM/yyyy' }} às {{ user.metadata.lastSignInTime | date: 'HH:mm' }}
         </li>
       </ul>
     </ion-card-content>
