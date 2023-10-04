@@ -11,6 +11,9 @@ export const environment = {
   // Coleção de contatos do Firestore.
   contactCollection: 'contacts',
 
+  // Coleção principal do Firebase.
+  dbCollection: 'things',
+
   // Altere estas chaves conforme seu próprio projeto no Firebase.com.
   firebase: {
     apiKey: 'AIzaSyB3qGcFb11tOQGm2_vOnUxd7rQaBhcMkPQ',

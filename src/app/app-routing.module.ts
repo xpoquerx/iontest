@@ -57,6 +57,11 @@ const routes: Routes = [
     title: environment.appName + ' - Perfil do usuário',
     loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule)
   },
+  {
+    path: 'create',
+    title: environment.appName + ' - (Re)Cria banco de dados',
+    loadChildren: () => import('./db/create/create.module').then( m => m.CreatePageModule)
+  },
 
   // Rota curinga. Deve ser sempre a última rota desta lista.
   {
