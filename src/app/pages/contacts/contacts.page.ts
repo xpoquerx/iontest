@@ -5,6 +5,8 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
+import { ToolsService } from 'src/app/services/tools.service';
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.page.html',
@@ -24,6 +26,7 @@ export class ContactsPage implements OnInit {
   // Define a coleção onde os contatos são armazenados.
   contactCollection = collection(this.db, environment.contactCollection);
 
+  // Variáveis de ambiente.
   env = environment;
 
   // Model do formulário.
@@ -36,10 +39,15 @@ export class ContactsPage implements OnInit {
     status: 'received'  // Situação do contato [received, readed, answered, deleted]
   }
 
+  // Bloqueia botão de envio.
+  btnDisabled = true;
+
   // Formulário ainda não foi enviado, mostra formulário.
   sended = false;
 
-  constructor() { }
+  constructor(
+    private tools: ToolsService
+  ) { }
 
   ngOnInit() {
 
@@ -53,22 +61,26 @@ export class ContactsPage implements OnInit {
 
   }
 
-  sendForm() {
-
-    // Regex para validar e-mail (HTML5 → RFC5322).
-    const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*$/;
-
+  // Quando ocorrem alterações no formulário.
+  change() {
     // Valida campos do formulário usando 'stripTags()' e regex.
     if (
-      this.stripTags(this.form.name).length < 3 ||          // 'name' → com menos de 3 caracteres.
-      !regexEmail.test(this.stripTags(this.form.email)) ||  // 'email' → não respeita a regex.
-      this.stripTags(this.form.subject).length < 3 ||       // 'subject' → com menos de 3 caracteres.
-      this.stripTags(this.form.message).length < 5          // 'message' → com menos de 5 caracteres.
-    ) return false;                                         // Retorna sem fazer nada.
+      this.tools.stripTags(this.form.name).length > 2 &&          // 'name' → com pelo menos 3 caracteres.
+      this.tools.isMail(this.tools.stripTags(this.form.email)) && // 'email' → respeita a regex.
+      this.tools.stripTags(this.form.subject).length > 2 &&       // 'subject' → com pelo menos 3 caracteres.
+      this.tools.stripTags(this.form.message).length > 4          // 'message' → com pelo menos 5 caracteres.
+    ) this.btnDisabled = false;                                   // Tudo válido → Desbloqueia o botão.
+    else this.btnDisabled = true;                                 // Algo inválido → Bloqueia o botão.              
+  }
+
+  // Processa envio do formulário.
+  sendForm() {
+
+    // Valida campos.
+    if (this.btnDisabled) return false;
 
     // Gera a data atual no formato ISO (yyyy-MM-dd HH:mm).
-    const d = new Date();
-    this.form.date = d.toISOString().split('.')[0].replace('T', ' ');
+    this.form.date = this.tools.now();
 
     // Salva formulário no banco de dados.
     addDoc(this.contactCollection, this.form)
@@ -82,17 +94,11 @@ export class ContactsPage implements OnInit {
       // Se falhou, exibe mensagem de erro no console.
       .catch((error) => {
         console.error(error);
-      });
+      })
 
     // Conclui 'sendForm()'.
     return true;
-  }
 
-  // Remove códigos JavaScript e tags HTML da string.
-  stripTags(htmlText: string) {
-    let div = document.createElement('div');
-    div.innerHTML = htmlText.trim().replace(/<script>.*<\/script>/, '');
-    return div.textContent || '';
   }
 
 }
