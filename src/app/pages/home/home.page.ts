@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 
 import { initializeApp } from 'firebase/app';
 import { collection, getCountFromServer, getFirestore, onSnapshot, orderBy, query, where } from 'firebase/firestore';
@@ -62,11 +62,11 @@ export class HomePage implements OnInit {
     // Se existem documentos.
     if (this.count > 0) {
 
-      // Cria a lista de documentos.
-      let docList: any[] = [];
-
       // Atualiza documentos em tempo real.
       onSnapshot(q, (querySnapshot) => {
+
+        // Cria a lista de documentos.
+        let docList: any[] = [];
 
         // Loop para obter documentos.
         querySnapshot.forEach((doc) => {
