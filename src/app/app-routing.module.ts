@@ -62,6 +62,11 @@ const routes: Routes = [
     title: environment.appName + ' - (Re)Cria banco de dados',
     loadChildren: () => import('./db/create/create.module').then( m => m.CreatePageModule)
   },
+  {
+    path: 'view/:id',
+    title: environment.appName + ' - Exibe um documento',
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
+  },
 
   // Rota curinga. Deve ser sempre a última rota desta lista.
   {

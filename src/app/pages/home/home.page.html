@@ -1,21 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     <ion-buttons slot="start"><ion-menu-button></ion-menu-button></ion-buttons>
-
     <ion-title class="ion-text-center">{{ env.appName }}</ion-title>
-
     <ion-icon ios="home-outline" md="home-sharp" slot="end" class="ion-padding"></ion-icon>
-
+    <ion-progress-bar *ngIf="!view" type="indeterminate"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero a amet dolores officia! Voluptatem omnis veritatis
-  adipisci placeat facere cupiditate, ducimus commodi obcaecati tempora impedit ratione dolorum esse magnam est!
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam iste assumenda quisquam vel asperiores doloribus
-    tempora rem omnis sapiente, molestias vitae reprehenderit eveniet, odit aliquam distinctio deserunt quos aspernatur
-    consectetur.</p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corporis ullam dicta, nihil ducimus dolore fugiat
-  tenetur. Quae autem dolorem, fugiat commodi aperiam voluptas? Tenetur excepturi officiis harum sed beatae!
+<ion-content [fullscreen]="true" *ngIf="view">
+
+<h4 class="ion-margin">Lista de Trecos</h4>
+
+  <ion-list *ngIf="count > 0" class="ion-margin">
+    <div *ngFor="let item of docView">
+      <ion-item [routerLink]="'/view/' + item.id">
+        <ion-thumbnail slot="start">
+          <img [alt]="item.name" [src]="item.image">
+        </ion-thumbnail>
+        <ion-label>{{ item.name }}</ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <ion-card *ngIf="count == 0">
+    <ion-card-header>
+      <ion-card-title>Oooops!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>Não encontramos documentos.</ion-card-content>
+  </ion-card>
+
 </ion-content>

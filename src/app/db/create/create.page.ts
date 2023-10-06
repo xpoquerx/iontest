@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { addDoc, collection, doc, getDocs, getFirestore, deleteDoc } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore, deleteDoc } from "firebase/firestore";
 
 // Importa lista de documentos "fake".
 import { things } from "../data";
