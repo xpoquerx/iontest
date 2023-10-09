@@ -29,4 +29,15 @@ export class ToolsService {
     return regexEmail.test(textMail);
   }
 
+  // Gera uma string com 'n' caracteres aleatórios.
+  getRandomChars(n: number): string {
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let sequence = '';
+    for (let i = 0; i < n; i++) {
+      const rndi = Math.floor(Math.random() * chars.length);
+      sequence += chars.charAt(rndi);
+    }
+    return sequence;
+  }
+
 }

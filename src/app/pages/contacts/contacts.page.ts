@@ -87,7 +87,7 @@ export class ContactsPage implements OnInit {
 
       // Se teve sucesso, oculta formulário e agradece ao usuário.
       .then((data) => {
-        console.log('Contato salvo com o Id: ' + data.id);
+        // console.log('Contato salvo com o Id: ' + data.id);
         this.sended = true;
       })
 

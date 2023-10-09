@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>device</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button (click)="getPhoto()">Tirar foto</ion-button>
+
+  <div *ngIf="image">
+    <ion-img [src]="image"></ion-img>
+    <pre>{{ image }}</pre>
+    <pre>{{ photoFormat }}</pre>
+  </div>
+
+  <div *ngIf="location">
+    Localização:
+    <ul>
+      <li>Latitude: {{ location.latitude }}</li>
+      <li>Longitude: {{ location.longitude }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="location">
+    <a target="_blank" href="https://www.google.com/maps/place/{{location.latitude}},{{location.longitude}}">Ver no
+      mapa</a>
+  </div>
+
+  <div *ngIf="devInfo">
+    Sobre o dispositivo:
+    <pre>{{ devInfo | json }}</pre>
+  </div>
+
+  <div *ngIf="devId">
+    ID do dispositivo:
+    <pre>{{ devId | json }}</pre>
+  </div>
+
+  <div *ngIf="devBat">
+    Status da bateria:
+    <pre>{{ devBat | json }}</pre>
+  </div>
+
+  <div *ngIf="devLang">
+    Idioma do dispositivo:
+    <pre>{{ devLang | json }}</pre>
+  </div>
+
+</ion-content>

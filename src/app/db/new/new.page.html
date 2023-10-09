@@ -5,9 +5,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">new</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <ion-button (click)="getPhoto()">Take</ion-button>
+
+  <div *ngIf="image">
+    <ion-img [src]="image"></ion-img>
+    <pre *ngIf="location">Localização: {{ location.latitude }}, {{ location.longitude }}</pre>
+  </div>
+
 </ion-content>
