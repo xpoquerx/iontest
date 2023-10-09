@@ -67,6 +67,11 @@ const routes: Routes = [
     title: environment.appName + ' - Exibe um documento',
     loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
   },
+  {
+    path: 'new',
+    title: environment.appName + ' - Novo documento',
+    loadChildren: () => import('./db/new/new.module').then( m => m.NewPageModule)
+  },
 
   // Rota curinga. Deve ser sempre a última rota desta lista.
   {
@@ -74,6 +79,7 @@ const routes: Routes = [
     redirectTo: 'e404',
     pathMatch: 'full'
   }
+
 
 ];
 
