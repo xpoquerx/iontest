@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
 import { environment } from 'src/environments/environment';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from "firebase/storage";
 
 @Component({
   selector: 'app-new',
@@ -13,6 +15,8 @@ export class NewPage implements OnInit {
 
   // Firebase.
   app = initializeApp(environment.firebase);
+  auth = getAuth(this.app);
+  db = getFirestore(this.app);
   storage = getStorage(this.app);
 
 
