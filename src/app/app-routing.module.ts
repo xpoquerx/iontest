@@ -60,22 +60,17 @@ const routes: Routes = [
   {
     path: 'create',
     title: environment.appName + ' - (Re)Cria banco de dados',
-    loadChildren: () => import('./db/create/create.module').then( m => m.CreatePageModule)
+    loadChildren: () => import('./db/create/create.module').then(m => m.CreatePageModule)
   },
   {
     path: 'view/:id',
     title: environment.appName + ' - Exibe um documento',
-    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
-  },
-  {
-    path: 'new',
-    title: environment.appName + ' - Novo documento',
-    loadChildren: () => import('./db/new/new.module').then( m => m.NewPageModule)
+    loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
   },
   {
     path: 'device',
     title: environment.appName + ' - Testes com Device',
-    loadChildren: () => import('./tests/device/device.module').then( m => m.DevicePageModule)
+    loadChildren: () => import('./tests/device/device.module').then(m => m.DevicePageModule)
   },
 
   // Rota curinga. Deve ser sempre a última rota desta lista.

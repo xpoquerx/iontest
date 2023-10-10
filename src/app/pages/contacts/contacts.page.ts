@@ -29,21 +29,21 @@ export class ContactsPage implements OnInit {
   // Variáveis de ambiente.
   env = environment;
 
-  // Model do formulário.
-  form = {
-    date: '',           // Data de envio do contato.
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    status: 'received'  // Situação do contato [received, readed, answered, deleted]
-  }
-
   // Bloqueia botão de envio.
   btnDisabled = true;
 
   // Formulário ainda não foi enviado, mostra formulário.
   sended = false;
+
+  // Model do formulário.
+  form = {
+    date: '',
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    status: 'received'
+  }
 
   constructor(
     private tools: ToolsService

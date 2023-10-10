@@ -15,7 +15,7 @@ export class ToolsService {
   }
 
   // Obtém a data atual no formato ISO (yyyy-MM-dd HH:mm).
-  now() {
+  now(format = 'object') {
     let yourDate = new Date();
     yourDate = new Date(yourDate.getTime() - (yourDate.getTimezoneOffset() * 60 * 1000));
     const dateParts = yourDate.toISOString().split('T');
