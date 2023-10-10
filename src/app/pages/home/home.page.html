@@ -23,7 +23,7 @@
   <ion-list *ngIf="count > 0" class="ion-margin-start ion-margin-end">
     <div *ngFor="let item of docView">
       <ion-item [routerLink]="'/view/' + item.id">
-        <ion-thumbnail slot="start"><img [alt]="item.name" [src]="item.image"></ion-thumbnail>
+        <ion-thumbnail slot="start"><ion-img [alt]="item.name" [src]="item.image"></ion-img></ion-thumbnail>
         <ion-label>{{ item.name }}</ion-label>
       </ion-item>
     </div>

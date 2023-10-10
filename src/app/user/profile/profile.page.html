@@ -9,10 +9,8 @@
 
 <ion-content *ngIf="view" [fullscreen]="true">
 
-  <!-- pre>{{ user | json }}</pre -->
-
   <ion-card>
-    <img [alt]="user.displayName" [src]="user.photoURL" referrerpolicy="no-referrer" style="display: block; margin: auto;" />
+    <ion-img [alt]="user.displayName" [src]="user.photoURL" referrerpolicy="no-referrer" style="display: block; margin: auto;"></ion-img>
     <ion-card-header>
       <ion-card-title>{{ user.displayName }}</ion-card-title>
       <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>

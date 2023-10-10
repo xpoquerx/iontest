@@ -9,7 +9,6 @@ export class PoliciesPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
 
 }

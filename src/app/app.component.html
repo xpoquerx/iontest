@@ -4,29 +4,33 @@
       <ion-content>
 
         <ion-list id="inbox-list">
+
+          <!-- Nome e slogan do aplicativo. -->
           <ion-list-header>{{ env.appName }}</ion-list-header>
           <ion-note>{{ env.appSlogan }}</ion-note>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
-              routerLinkActive="selected">
+          <!-- Loop do menu principal. -->
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+
         </ion-list>
 
+        <!-- Seção do usuário. -->
         <ion-list>
 
           <ion-menu-toggle auto-hide="false">
-            <ion-item routerDirection="root" [routerLink]="appUser.url" lines="none" detail="false"
-              routerLinkActive="selected">
+            <ion-item routerDirection="root" [routerLink]="appUser.url" lines="none" detail="false" routerLinkActive="selected">
 
-              <ion-icon *ngIf="!appUser.logged" aria-hidden="true" slot="start" [ios]="appUser.icon + '-outline'"
-                [md]="appUser.icon + '-sharp'"></ion-icon>
+              <!-- Quando usuário não está logado. -->
+              <ion-icon *ngIf="!appUser.logged" aria-hidden="true" slot="start" [ios]="appUser.icon + '-outline'" [md]="appUser.icon + '-sharp'"></ion-icon>
 
+              <!-- Quando usuário está logado. -->
               <ion-avatar *ngIf="appUser.logged" slot="start">
-                <img [alt]="appUser.title" [src]="appUser.avatar" referrerpolicy="no-referrer" />
+                <img [alt]="appUser.title" [src]="appUser.avatar" referrerpolicy="no-referrer">
               </ion-avatar>
 
               <ion-label>{{ appUser.title }}</ion-label>
