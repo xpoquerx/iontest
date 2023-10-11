@@ -21,7 +21,8 @@
     <ion-card-content>
       {{ docView.description }}
       <ul style="padding: 0 0 0 1rem;">
-        <li><strong>Local: </strong>{{ docView.location }}</li>
+        <li><strong>GPS: </strong><a href="https://www.google.com/maps/place/{{ docView.geolocation }}" target="_blank">{{ docView.geolocation }}</a></li>
+        
       </ul>
 
       <ion-grid>
